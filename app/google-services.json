@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "237164866574",
+    "project_id": "loginandpost-46bc6",
+    "storage_bucket": "loginandpost-46bc6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237164866574:android:c8baa0db7d6ae2ad5aa05f",
+        "android_client_info": {
+          "package_name": "com.example.loginandpost"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237164866574-t3ruf8kkvrak47lsojcjkg59u98ad2ub.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjE1rSEfP-ozr3v7qiRni-uk-Ln-j4H0k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237164866574-t3ruf8kkvrak47lsojcjkg59u98ad2ub.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfilActivity"
+    android:background="@android:color/holo_green_light">
+
+    <ImageButton
+        android:id="@+id/profileimage_button"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="128dp"
+        android:background="@drawable/rounded_select_photo_button_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/edittext_profil_username"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/profileimage_button"
+        app:layout_constraintStart_toStartOf="@+id/profileimage_button"
+        app:layout_constraintTop_toBottomOf="@+id/profileimage_button" />
+
+    <Button
+        android:id="@+id/profil_button"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:text="SAVE"
+        app:layout_constraintEnd_toEndOf="@+id/edittext_profil_username"
+        app:layout_constraintStart_toStartOf="@+id/edittext_profil_username"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_profil_username" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circle_image_view_profile"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="@+id/profileimage_button"
+        app:layout_constraintEnd_toEndOf="@+id/profileimage_button"
+        app:layout_constraintStart_toStartOf="@+id/profileimage_button"
+        app:layout_constraintTop_toTopOf="@+id/profileimage_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
