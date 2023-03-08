@@ -9,7 +9,11 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.ChildEventListener
@@ -31,14 +35,44 @@ class PostActivity : AppCompatActivity() {
     lateinit var postText: EditText
     private lateinit var postButton: Button
     private lateinit var recyclerview_post: RecyclerView
+    lateinit var toggle: ActionBarDrawerToggle
 
     val adapter = GroupAdapter<GroupieViewHolder>()
     val currentUser = Firebase.auth.currentUser
 
 
+    companion object{
+        val USER_KEY = "USER_KEY"
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_post)
+
+        toggle = ActionBarDrawerToggle(this,findViewById(R.id.drawer_layout),R.string.open,R.string.close)
+        findViewById<DrawerLayout>(R.id.drawer_layout).addDrawerListener(toggle)
+        toggle.syncState()
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)//back tuşu
+
+        findViewById<NavigationView>(R.id.navView).setNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.miItem1 -> {
+                    val intent = Intent(this,ChatActivity::class.java)
+                    intent.putExtra(USER_KEY,0)
+                    startActivity(intent)
+                }
+                R.id.miItem2 -> {
+                    val intent = Intent(this,ChatActivity::class.java)
+                    intent.putExtra(USER_KEY,1)
+                    startActivity(intent)
+                }
+                R.id.miItem3 -> Toast.makeText(applicationContext,"Clicked Item 3", Toast.LENGTH_SHORT).show()
+                R.id.miItem4 -> Toast.makeText(applicationContext,"Clicked Item 3", Toast.LENGTH_SHORT).show()
+
+
+            }
+            true
+        }
 
         supportActionBar?.title = "Post Something"
 
@@ -76,10 +110,10 @@ class PostActivity : AppCompatActivity() {
                 Log.d(TAG, "Post database'e kaydedilemedi.")
             }
 
-        val ref = FirebaseDatabase.getInstance("https://loginandpost-46bc6-default-rtdb.europe-west1.firebasedatabase.app")
+        /*val ref = FirebaseDatabase.getInstance("https://loginandpost-46bc6-default-rtdb.europe-west1.firebasedatabase.app")
                 .getReference("/users")
 
-        /*var something: String = ""
+        var something: String = ""
 
 
         ref.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -106,7 +140,7 @@ class PostActivity : AppCompatActivity() {
 
 
 
-        recyclerview_post.adapter = adapter
+        //recyclerview_post.adapter = adapter
 
 
     }
@@ -246,6 +280,10 @@ class PostActivity : AppCompatActivity() {
                 val intent = Intent(this, ProfilActivity::class.java)
                 startActivity(intent)
             }
+        }
+
+        if(toggle.onOptionsItemSelected(item)){
+            return true
         }
         return super.onOptionsItemSelected(item)
     }

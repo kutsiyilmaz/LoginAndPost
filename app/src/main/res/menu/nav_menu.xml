@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/menu_profil"
-        android:title="PROFIL"
+        android:title="PROFILe"
         app:showAsAction="ifRoom"/>
+
 
 </menu>
