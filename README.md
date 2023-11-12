@@ -1,5 +1,5 @@
 # LoginAndPost
-LoginAndPost, Firebase realtime database ve kotlin dili kullanılarak oluşturulmuş bir projedir. Öncelikle verilen id ve şifre ile giriş yapılır. Sonrasında açılan ana ekranda sosyal medyalardaki gibi feed karşımıza gelir. Burada istenildiği şekilde text olarak herkese açık postlar yaratılabilir. Sonra,ana ekrandaki sol üstteki toggle tuşundan grup mesajlaşma ekranına geçilir. Burada istenilen kanalda grup mesajlaşma yapılabilir. Ayrıca loginden sonraki ana ekranda sağ üstte de profilimize gidip username ve cihazımızdan fotoğraf setleyebiliriz.
+LoginAndPost is a project created using Firebase Realtime Database and the Kotlin language. Initially, the login is performed with the provided ID and password. Subsequently, on the main screen that opens, a feed similar to social media platforms is displayed. Here, public posts can be created in text format as desired. Next, by toggling the toggle button in the top-left corner of the main screen, you can switch to the group messaging screen. Group messaging can be conducted in the desired channel here. Additionally, on the main screen after logging in, you can navigate to your profile in the top-right corner and set your username and upload a photo from your device.
 
 
 ![1](https://user-images.githubusercontent.com/32748588/223709829-2bd92aee-c32a-461f-afa3-e35740bf8315.png)
